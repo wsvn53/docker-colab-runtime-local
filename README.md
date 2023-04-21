@@ -20,6 +20,20 @@ docker build . -t colab-runtime-local
 
 The build process may take a long time. After that, start the container as described above.
 
+### Connect from colab
+
+After docker container started, you can get the full url or notebook token from logs or terminal.
+
+Then, you can connect the local container by following the instructions of google colab.
+
+### Network forward
+
+It is possible that the computer with a graphics card you have installed is not the one currently running Colab. However, Colab only allows connections to be made to localhost, so you may need to map the remote port to a local port.
+
+```sh
+ssh -N -L 8888:localhost:8888 user@host
+```
+
 ## Limits
 
 The following are some capabilities that may work in Google Colab but may not run locally:
