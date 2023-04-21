@@ -9,7 +9,7 @@ This is a Docker container that replicates the colab runtime environment, used t
 **Notice:** This image size is almost ~28GB, Please be careful to reserve network traffic and disk space. 
 
 ```sh
-docker run -it -d --gpus all --name colab -v content:/content -p 8888:8888 wsvn/wsvn/colab-runtime-local:latest 
+docker run -it -d --gpus all --name colab -v content:/content -p 8888:8888 wsvn/colab-runtime-local:latest 
 ```
 
 Or, You can also build docker image from Dockerfile:
@@ -28,7 +28,7 @@ Then, you can connect the local container by following the instructions of googl
 
 ### Network forward
 
-It is possible that the computer with a graphics card you have installed is not the one currently running Colab. However, Colab only allows connections to be made to localhost, so you may need to map the remote port to a local port.
+It is possible that the computer with a graphics card you have installed is not the one currently running Colab. However, Colab only allows connections to be made to localhost, so you may need to map the remote port to a local port:
 
 ```sh
 ssh -N -L 8888:localhost:8888 user@host
@@ -50,7 +50,7 @@ Tested the following colab notebooks on Ubuntu 22.05 host with Tesla T4:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/camenduru/ControlNet-v1-1-nightly-colab/blob/main/ControlNet-v1-1-nightly.ipynb) | ControlNet-1.1-all_in_one
 
-If you encounter any issues while using it elsewhere, please also submit an issue.
+If you encounter any issues while using it elsewhere, please submit an issue.
 
 # License
 
